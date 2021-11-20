@@ -3,6 +3,18 @@
   grid-template-columns: 5fr 1fr;
 }
 
+.search-container {
+  background-color: rgb(104, 95, 95);
+  line-height: 50px;
+  text-align: center;
+}
+
+.search-container input {
+  width: 75%;
+  padding: 7px;
+  border-radius: 5px;
+}
+
 .product-container {
   border-right: 1px solid lightgrey;
   margin-right: 10px;

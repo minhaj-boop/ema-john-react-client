@@ -1,6 +1,6 @@
 .cart {
   margin: auto;
-  width: 60%;
+  width: 90%;
   position: sticky;
   top: 0;
 }
@@ -14,4 +14,7 @@
   cursor: pointer;
   border-radius: 3px;
   vertical-align: middle;
+}
+.grand-total {
+  color: brown;
 }
