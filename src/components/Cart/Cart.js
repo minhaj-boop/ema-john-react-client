@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingBag } from '@fortawesome/free-solid-svg-icons'
 import './Cart.css';
 
 const Cart = (props) => {
@@ -11,12 +13,12 @@ const Cart = (props) => {
     // for(const product of cart) {
     //     total+=product.price;
     // }
-    
     return (
-        <div>
+        <div className="cart">
             <h3>Order Summary</h3>
-            <h5>Items Ordered: {props.cart.length}</h5>
-            <p>Total: {total.toFixed(2)}</p>
+            <h4>Items Ordered: {props.cart.length}</h4>
+            <p>Total: {'$'+total.toFixed(2)}</p>
+            <button className="btn-cart"><FontAwesomeIcon icon={faShoppingBag}></FontAwesomeIcon> Review Your Order</button> 
         </div>
     );
 };

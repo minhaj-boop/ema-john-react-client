@@ -1,0 +1,17 @@
+.cart {
+  margin: auto;
+  width: 60%;
+  position: sticky;
+  top: 0;
+}
+
+.btn-cart {
+  background-color: #f0c14b;
+  border: 1px solid grey;
+  color: #111;
+  width: 200px;
+  height: 26px;
+  cursor: pointer;
+  border-radius: 3px;
+  vertical-align: middle;
+}
