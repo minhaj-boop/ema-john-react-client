@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
+import '../Product/Product.css'
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
@@ -10,29 +12,30 @@ const Shop = () => {
     const [displayProducts, setDisplayProducts] = useState([]);
 
     useEffect(() => {
-      fetch('./products.JSON')
-      .then(res => res.json())
-      .then(data => {
-        setDisplayProducts(data);  
-        setProducts(data)});  
-    },[]);
+        fetch('./products.JSON')
+            .then(res => res.json())
+            .then(data => {
+                setDisplayProducts(data);
+                setProducts(data)
+            });
+    }, []);
 
     useEffect(() => {
-        
-        if(products.length) {
+
+        if (products.length) {
             const savedCart = getStoredCart();
             const storedCart = [];
-            for(const key in savedCart) {
+            for (const key in savedCart) {
                 const addedProduct = products.find(product => product.key === key);
                 storedCart.push(addedProduct);
-                if(addedProduct) {
+                if (addedProduct) {
                     const quantity = savedCart[key];
                     addedProduct.quantity = quantity;
                 }
             }
             setCart(storedCart);
         }
-    },[products]);
+    }, [products]);
 
     const handleAddToCart = product => {
         const newCart = [...cart, product];
@@ -49,24 +52,28 @@ const Shop = () => {
     return (
         <>
             <div className="search-container">
-                <input 
-                type="text"
-                onChange={handleSearch} 
-                placeholder="Search product"/>
+                <input
+                    type="text"
+                    onChange={handleSearch}
+                    placeholder="Search product" />
             </div>
             <div className="shop-container">
                 <div className="product-container">
                     {
-                        displayProducts.map(product => <Product 
+                        displayProducts.map(product => <Product
                             key={product.key}
                             product={product}
                             handleAddToCart={handleAddToCart}
-                            >
+                        >
                         </Product>)
                     }
                 </div>
                 <div className="cart-container">
-                    <Cart cart={cart}></Cart>
+                    <Cart cart={cart}>
+                        <Link to="/review">
+                            <button className="btn-regular">Review Your order</button>
+                        </Link>
+                    </Cart>
                 </div>
             </div>
         </>
