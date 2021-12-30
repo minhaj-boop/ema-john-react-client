@@ -9,8 +9,10 @@ const Header = () => {
             <img className="logo" src={logo} alt="" />
             <nav>
                 <NavLink to={"/shop"}>Shop</NavLink>
-                <NavLink to={"/review"}>Order Review</NavLink>i
-                <NavLink to="/inventory">Manage Inventory</NavLink>
+                <NavLink to={"/review"}>Order Review</NavLink>
+                <NavLink to={"/working"}>How we work</NavLink>
+                <NavLink to={"/contact"}>Contact</NavLink>
+                <NavLink to={"/about"}>About Ema-John</NavLink>
             </nav>
         </div>
     );
