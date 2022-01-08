@@ -8,11 +8,11 @@ const About = () => {
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-              <img src={img} id="image"></img>
+            <img src={img} id="image"></img>
           </div>
           <div class="col-md-6" id="textdiv">
             <div class="card-body">
-                <h1>About Ema-John</h1>
+              <h1>About ema-John</h1>
               <p>
                 Ema-John is the largest one - stop shopping destination in
                 Bangladesh.Launched in 2021, the online store offers the widest
