@@ -20,3 +20,26 @@
   margin-right: 10px;
   margin-left: 150px;
 }
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+}
+.pagination button {
+  margin-right: 15px;
+  border: none;
+  border: 2px;
+  background-color: rgb(236, 198, 149);
+  /* border: 1px solid gray; */
+}
+
+.pagination button:hover {
+  background-color: rgb(131, 115, 115);
+  color: white;
+}
+
+.pagination .selected {
+  background-color: rgb(131, 115, 115);
+  color: white;
+}
